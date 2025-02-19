@@ -1,44 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TodoCaifanes</title>
     <link rel="shortcut icon" href="./media/imagenes/iconoC.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-        }
-        main {
-            flex: 3;
-            padding: 20px;
-        }
-        aside {
-            flex: 1;
-            background-color: #f4f4f4;
-            padding: 20px;
-            margin-left: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
     <header>
-        <img src="./media/imagenes/logo.webp" alt="Este es el logo de caifanes" height="100" width="150">
+        <img src="./media/imagenes/Caifanes_Logo.png" alt="Logo de Caifanes" class="logo">
     </header>
-    <nav>
 
+    <nav>
+        <ul>
+            <li><a href="...">ALBUMES</a></li>
+            
+        </ul>
     </nav>
+
     <aside>
         <ul>
-            <li>INTEGRANTES</li>
-            <li>DISCOGRAFIA</li>
-            <li>HISTORIA</li>
+            <li><a href="#integrantes">INTEGRANTES</a></li>
+            <li><a href="#historia">HISTORIA</a></li>
+            <li><a href="#discografia">DISCOGRAFÍA</a></li>
         </ul>
     </aside>
-    <article>
 
-    </article>
+    <main>
+        <article id="integrantes">
+            <h2>Integrantes</h2>
+            <p>Los integrantes originales de la banda mexicana Caifanes son: </p>
+            <ul>
+                <li>Saúl Hernández (voz principal y guitarra)</li>
+                <li>Alejandro Marcovich (guitarra)</li>
+                <li>Alfonso André (batería)</li>
+                <li>Sabo Romo (bajo)</li>
+                <li>César López (teclados)</li>
+            </ul>
+        </article>
+
+        <article id="historia">
+            <h2>Historia</h2>
+            <p>Caifanes fue una influyente banda mexicana de rock formada en 1987 en la Ciudad de México. La banda fue fundada por Saúl Hernández (voz principal y guitarra), Alejandro Marcovich (guitarra), Alfonso André (batería), Sabo Romo (bajo) y César López (teclados).
+
+                La banda se hizo conocida por su fusión de rock, pop y música tradicional mexicana, lo que les permitió crear un sonido único y distintivo. Su primer álbum, "Caifanes", fue lanzado en 1988 y fue bien recibido por la crítica y el público. A lo largo de su carrera, Caifanes lanzó varios álbumes exitosos, incluyendo "El Silencio" (1992) y "El Nervio del Volcán" (1994).
+                
+                En 1995, la banda se disolvió debido a diferencias internas, pero sus miembros continuaron con proyectos musicales en solitario. En 2011, Caifanes se reunió para una serie de conciertos y grabaron un nuevo álbum, "El Extraño Viaje" (2014).</p>
+        </article>
+
+        <article id="discografia">
+            <h2>Discografía</h2>
+            <p>Aquí tienes la discografía de Caifanes:</p>
+            <ul>
+                <li>Caifanes (1988)</li>
+                <li>El Silencio (1992)</li>
+                <li>El Nervio del Volcán (1994)</li>
+                <li>El Extraño Viaje (2014)</li>
+            </ul>
+        </article>
+    </main>
 </body>
 </html>
