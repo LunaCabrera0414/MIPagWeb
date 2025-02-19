@@ -41,9 +41,9 @@ nav a {
     font-size: 18px;
 }
 
-nav a:hover {
+/*nav a:hover {
     text-decoration: underline;
-}
+}*/
 
 aside {
     background-color: #222;
