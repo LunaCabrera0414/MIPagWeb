@@ -4,61 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TodoCaifanes</title>
-    <link rel="shortcut icon" href="./media/imagenes/iconoC.png">
-    <link rel="stylesheet" href="./styles/styles.css">  
+    <link rel="shortcut icon" href="./logo/Caifanes_Logo.png">
+    <link rel="stylesheet" href="./styles/styles.css"> 
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <img src="./media/imagenes/Caifanes_Logo.png" alt="Logo de Caifanes" class="logo">
+        <div class="contenedor-header">
+            <div>
+                <p></p>
+                <p></p>
+            </div>
+            <div>
+                <img src="./logo/Caifanes_Logo.png" alt="Logo de Caifanes" class="logo">
+            </div>
+            <div class="buscar">
+                <input type="buscar" placeholder="Buscar">
+                <button>Buscar</button>
+            </div>
+        </div>
+    
+        <nav>
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="albumes.html">ALBUMES</a></li>
+                <li><a href="...">LINEA DEL TIEMPO</a></li>
+                <li><a href="...">CONCIERTOS ICÓNICOS</a></li>
+                <li><a href="...">IMPACTO CULTURAL</a></li>
+                <li><a href="...">COLABORACIONES</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <ul>
-            <li><a href="...">ALBUMES</a></li>
-            
-        </ul>
-    </nav>
-
-    <aside>
-        <ul>
-            <li><a href="#integrantes">INTEGRANTES</a></li>
-            <li><a href="#historia">HISTORIA</a></li>
-            <li><a href="#discografia">DISCOGRAFÍA</a></li>
-        </ul>
-    </aside>
+    
 
     <main>
-        <article id="integrantes">
-            <h2>Integrantes</h2>
-            <p>Los integrantes originales de la banda mexicana Caifanes son: </p>
-            <ul>
-                <li>Saúl Hernández (voz principal y guitarra)</li>
-                <li>Alejandro Marcovich (guitarra)</li>
-                <li>Alfonso André (batería)</li>
-                <li>Sabo Romo (bajo)</li>
-                <li>César López (teclados)</li>
-            </ul>
-        </article>
+        <article>
+            <div class="contenedor-principal">
+                <div class="contenedor-texto">
+                    <h2>Integrantes</h2>
+                    <p>Los integrantes originales de la banda mexicana Caifanes son: </p>
+                    <ul>
+                        <li><i class="fa fa-star" aria-hidden="true"></i> Saúl Hernández (voz principal y guitarra)</li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i> Alejandro Marcovich (guitarra)</li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i> Alfonso André (batería)</li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i> Sabo Romo (bajo)</li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i> César López (teclados)</li>
+                    </ul>
+                </div>
+                <div class="contenedor-imagen">
+                    <img src="./media/imagenes/banda.jpg" alt="Caifanes">
+                </div>
+            </div>
+            <div class="contenedor">
+                <h2>Historia</h2>
+                <p>Caifanes fue una influyente banda mexicana de rock formada en 1987 en la Ciudad de México. La banda fue fundada por Saúl Hernández (voz principal y guitarra), Alejandro Marcovich (guitarra), Alfonso André (batería), Sabo Romo (bajo) y César López (teclados).
 
-        <article id="historia">
-            <h2>Historia</h2>
-            <p>Caifanes fue una influyente banda mexicana de rock formada en 1987 en la Ciudad de México. La banda fue fundada por Saúl Hernández (voz principal y guitarra), Alejandro Marcovich (guitarra), Alfonso André (batería), Sabo Romo (bajo) y César López (teclados).
-
-                La banda se hizo conocida por su fusión de rock, pop y música tradicional mexicana, lo que les permitió crear un sonido único y distintivo. Su primer álbum, "Caifanes", fue lanzado en 1988 y fue bien recibido por la crítica y el público. A lo largo de su carrera, Caifanes lanzó varios álbumes exitosos, incluyendo "El Silencio" (1992) y "El Nervio del Volcán" (1994).
-                
-                En 1995, la banda se disolvió debido a diferencias internas, pero sus miembros continuaron con proyectos musicales en solitario. En 2011, Caifanes se reunió para una serie de conciertos y grabaron un nuevo álbum, "El Extraño Viaje" (2014).</p>
+                    La banda se hizo conocida por su fusión de rock, pop y música tradicional mexicana, lo que les permitió crear un sonido único y distintivo. Su primer álbum, "Caifanes", fue lanzado en 1988 y fue bien recibido por la crítica y el público. A lo largo de su carrera, Caifanes lanzó varios álbumes exitosos, incluyendo "El Silencio" (1992) y "El Nervio del Volcán" (1994).
+                    
+                    En 1995, la banda se disolvió debido a diferencias internas, pero sus miembros continuaron con proyectos musicales en solitario. En 2011, Caifanes se reunió para una serie de conciertos y grabaron un nuevo álbum, "El Extraño Viaje" (2014).
+                </p>
+            </div>
+            <div class="contenedor">
+                <h2>Discografía</h2>
+                <p>Aquí tienes la discografía de Caifanes:</p>
+                <ul>
+                    <li><i class="fa fa-star" aria-hidden="true"></i> Caifanes (1988)</li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i> El Diablito (1990)</li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i> El Silencio (1992)</li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i> El Nervio del Volcan (1994)</li>
+                </ul>
+            </div>
         </article>
-
-        <article id="discografia">
-            <h2>Discografía</h2>
-            <p>Aquí tienes la discografía de Caifanes:</p>
-            <ul>
-                <li>Caifanes (1988)</li>
-                <li>El Silencio (1992)</li>
-                <li>El Nervio del Volcán (1994)</li>
-                <li>El Extraño Viaje (2014)</li>
-            </ul>
-        </article>
+        <footer>
+            <p>TodoCaifanes &copy; 2025</p>
+            <p>Desarrollado por Luna Cabrera</p>
+        </footer>
     </main>
 </body>
 </html>
