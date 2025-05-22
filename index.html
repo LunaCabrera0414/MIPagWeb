@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./logo/Caifanes_Logo.png">
     <link rel="stylesheet" href="./styles/styles.css"> 
     <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,8 +20,8 @@
                 <img src="./logo/Caifanes_Logo.png" alt="Logo de Caifanes" class="logo">
             </div>
             <div class="buscar">
-                <input type="buscar" placeholder="Buscar">
-                <button>Buscar</button>
+                <input type="text" id="searchInput" placeholder="Escribe el nombre de la página...">
+                <button onclick="buscarPagina()">Buscar</button>
             </div>
         </div>
     
@@ -28,10 +29,10 @@
             <ul>
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href="albumes.html">ALBUMES</a></li>
-                <li><a href="...">LINEA DEL TIEMPO</a></li>
-                <li><a href="...">CONCIERTOS ICÓNICOS</a></li>
-                <li><a href="...">IMPACTO CULTURAL</a></li>
-                <li><a href="...">COLABORACIONES</a></li>
+                <li><a href="lineadel tiempo.html">LINEA DEL TIEMPO</a></li>
+                <li><a href="conciertos.html">CONCIERTOS ICÓNICOS</a></li>
+                <li><a href="impacto.html">IMPACTO CULTURAL</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -74,6 +75,23 @@
                     <li><i class="fa fa-star" aria-hidden="true"></i> El Nervio del Volcan (1994)</li>
                 </ul>
             </div>
+            <div class="contenedor">
+                <div class="comment-section">
+                    <h2>Deja tu comentario</h2>
+                    <form id="comentarioForm" action="/comentarios" method="post">
+                        <textarea name="mensaje" placeholder="Escribe tu comentario" required></textarea>
+                        <br>
+                        <button type="submit">Enviar</button>
+                    </form>
+                    
+                
+                    <div class="comments" id="comentarios-container">
+                        <h2>Comentarios:</h2>
+                        <ul id="comentarios"></ul>
+                    </div>
+                </div>
+            </div>
+            
         </article>
         <footer>
             <p>TodoCaifanes &copy; 2025</p>
@@ -81,4 +99,5 @@
         </footer>
     </main>
 </body>
+
 </html>
