@@ -40,57 +40,83 @@ function buscarPagina() {
     }
 }
 
-document.getElementById("searchInput").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // Evita el comportamiento por defecto
-        if (this.value.trim()) {
-            buscarPagina();
+document.addEventListener("DOMContentLoaded", () => {
+    const esLocal = location.protocol === 'file:';
+
+    // Manejo de búsqueda
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+        searchInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                if (this.value.trim()) {
+                    buscarPagina(); // Define esta función si la usas
+                }
+            }
+        });
+    }
+
+    // Manejo de comentarios
+    const form = document.getElementById('comentarioForm');
+    const ul = document.getElementById('comentarios');
+
+    function renderizarComentarios(comentarios) {
+        ul.innerHTML = comentarios.map(c => `<li>${c.mensaje || c}</li>`).join('');
+    }
+
+    async function cargarComentarios() {
+        if (esLocal) {
+            const comentarios = JSON.parse(localStorage.getItem("comentarios") || "[]");
+            renderizarComentarios(comentarios);
+        } else {
+            try {
+                const res = await fetch('/comentarios');
+                const comentarios = await res.json();
+                renderizarComentarios(comentarios);
+            } catch (error) {
+                console.error("Error al cargar comentarios:", error);
+            }
         }
     }
-});
 
+    if (form) {
+        form.addEventListener('submit', async e => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
 
-async function cargarComentarios() {
-    try {
-        const res = await fetch('/comentarios');
-        const comentarios = await res.json();
-        console.log("Comentarios recibidos:", comentarios);
-        const ul = document.getElementById('comentarios');
-        ul.innerHTML = comentarios.map(c => `<li>${c.mensaje}</li>`).join('');
-    } catch (error) {
-        console.error("Error al cargar comentarios:", error);
+            if (esLocal) {
+                // Guarda en localStorage
+                const comentarios = JSON.parse(localStorage.getItem("comentarios") || "[]");
+                comentarios.unshift(data.mensaje);
+                localStorage.setItem("comentarios", JSON.stringify(comentarios));
+                renderizarComentarios(comentarios);
+                form.reset();
+            } else {
+                // Envía al servidor
+                try {
+                    const res = await fetch('/comentarios', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (res.ok) {
+                        form.reset();
+                        cargarComentarios();
+                    } else {
+                        console.error("Error al guardar comentario:", await res.text());
+                    }
+                } catch (error) {
+                    console.error("Error al enviar comentario:", error);
+                }
+            }
+        });
     }
-}
 
-document.getElementById('comentarioForm').addEventListener('submit', async e => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
-
-    await fetch('/comentarios', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-    });
-
-    e.target.reset();
     cargarComentarios();
 });
 
-cargarComentarios();
-
-function cargarComentariosLocalmente() {
-    let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
-
-    const ul = document.getElementById('comentarios');
-    ul.innerHTML = ""; // Limpia la lista antes de agregar nuevos comentarios
-
-    comentarios.forEach(c => {
-        const li = document.createElement("li");
-        li.textContent = c;
-        ul.appendChild(li);
-    });
+function buscarPagina() {
+    console.log("Buscar función ejecutada");
 }
-
-// Ejecutar la función cuando la página se carga
-document.addEventListener("DOMContentLoaded", cargarComentariosLocalmente);

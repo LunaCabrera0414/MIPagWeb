@@ -21,6 +21,7 @@ const server = http.createServer((req, res) => {
 
     // 🔧 Sirve archivos estáticos
     const extTypes = {
+        '.html': 'text/html',
         '.css': 'text/css',
         '.js': 'application/javascript',
         '.png': 'image/png',
