@@ -78,3 +78,19 @@ document.getElementById('comentarioForm').addEventListener('submit', async e => 
 });
 
 cargarComentarios();
+
+function cargarComentariosLocalmente() {
+    let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+
+    const ul = document.getElementById('comentarios');
+    ul.innerHTML = ""; // Limpia la lista antes de agregar nuevos comentarios
+
+    comentarios.forEach(c => {
+        const li = document.createElement("li");
+        li.textContent = c;
+        ul.appendChild(li);
+    });
+}
+
+// Ejecutar la función cuando la página se carga
+document.addEventListener("DOMContentLoaded", cargarComentariosLocalmente);
